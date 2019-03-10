@@ -99,11 +99,11 @@ def removeElement(self, nums, val: int) -> int:
         n = len(nums)
         while i < n:
             if nums[i] == val:
-                nums[i] = nums[n-1]
-                n  -= 1
+                nums[i] = nums[n-1] #用最后一个元素来替换
+                n  -= 1             #可以把n先计算出来放到一边
             else:
-                i += 1
-        return n
+                i += 1              #指针移动
+        return n                    #最后返回的是len(nums) 实际上list里会有一些重复的多余的数字（用已有的非val元素替换的val元素的数字但我们不考虑超出长度的部分）
 #通过	56 ms	13.3 MB	python3
 
 
