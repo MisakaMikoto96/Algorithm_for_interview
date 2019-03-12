@@ -78,13 +78,13 @@ class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         res = [nums]
-        t = [res[0]]
+        t = [res[0]] #len(t)越来越小
         while t:
             x = []
             for item in t:
                 for i in range(len(item)):
-                    if item[:i]+item[i+1:] not in x:
-                        x+= [item[:i]+item[i+1:]]
-            res += x
-            t = x
+                    if item[:i]+item[i+1:] not in x: #剔除掉除重复
+                        x+= [item[:i]+item[i+1:]] #除i元素之外所有元素的排列组合 依次遍历 len越来越小
+            res += x #收集所有的答案x
+            t = x 
         return res
