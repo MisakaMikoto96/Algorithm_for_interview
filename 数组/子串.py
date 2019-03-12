@@ -88,3 +88,6 @@ class Solution:
             res += x #收集所有的答案x
             t = x 
         return res
+
+      #python中字符串的 maketrans(in,out),translate(trantabl,'something')挺有用的
+      
